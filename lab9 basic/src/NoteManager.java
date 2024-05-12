@@ -15,4 +15,16 @@ public class NoteManager {
         String content = scanner.nextLine();
         notes.add(new Note(id, title, content));
     }
+
+    void viewNotes() {
+        for (Note note : notes) {
+            System.out.println(note);
+        }
+    }
+
+    void deleteNote() {
+        System.out.println("Enter note id to delete:");
+        int id = scanner.nextInt();
+        notes.removeIf(note -> note.getId() == id);
+    }
 }
